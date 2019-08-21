@@ -1,0 +1,13 @@
+{
+  "description": "Simple 'goodbye world' task",
+  "parameters": {
+    "message": {
+      "description": "A sample message parameter",
+      "type": "String"
+    }
+  },
+  "implementations": [
+    {"name": "goodbye-windows.ps1", "requirements": ["powershell"], "input_method": "powershell"},
+    {"name": "goodbye-linux.sh", "requirements": ["shell"], "input_method": "environment"}
+  ]
+}

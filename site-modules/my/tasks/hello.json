@@ -1,0 +1,9 @@
+{
+  "description": "Simple 'hello world' task",
+  "parameters": {
+    "message": {
+      "description": "A sample message parameter",
+      "type": "String"
+    }
+  }
+}

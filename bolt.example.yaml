@@ -1,0 +1,28 @@
+inventoryfile: "./inventory.yaml"
+modulepath: modules:site-modules
+
+ssh:
+  host-key-check: false
+  user: centos
+  run-as: root
+  private-key: /path/to/key.pem
+
+winrm:
+  user: administrator
+  password: 'mypassword'
+  ssl: false
+
+pcp:
+  service-url: https://puppet.example.com:8143
+  cacert: /path/to/ca.pem # /etc/puppetlabs/puppet/ssl/certs/ca.pem
+  token-file: /path/to/token # /root/.puppetlabs/token
+  task-environment: production
+
+puppetdb:
+  server_urls: ["https://puppet.example.com:8081"]
+  cacert: /path/to/ca.pem # /etc/puppetlabs/puppet/ssl/certs/ca.pem
+  token: /path/to/token # /root/.puppetlabs/token
+
+log:
+  console:
+    level: notice

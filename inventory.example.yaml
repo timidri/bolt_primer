@@ -1,0 +1,15 @@
+version: 2
+groups:
+  - name: master
+    targets:
+      - master.example.puppet.com
+  - name: windows
+    targets:
+      - windows.example.puppet.com
+    config:
+      transport: winrm
+  - name: linux
+    targets:
+      - linux.example.puppet.com
+    config:
+      transport: ssh

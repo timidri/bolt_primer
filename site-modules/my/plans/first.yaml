@@ -1,0 +1,13 @@
+  steps:
+    - command: hostname
+      target: all
+      description: "Get all hostnames"
+
+    - name: goodbye
+      task: my::goodbye
+      target: all
+      parameters:
+        message: "Hello, World"
+      description: "Say goodbye"
+
+  return: $goodbye
