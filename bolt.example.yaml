@@ -9,7 +9,7 @@ ssh:
 
 winrm:
   user: administrator
-  password: 'mypassword'
+  password: "mypassword"
   ssl: false
 
 pcp:
