@@ -1,4 +1,4 @@
-plan my::httpd(
+plan bolt_primer::httpd(
   TargetSpec $nodes,
 ) {
     apply_prep($nodes)

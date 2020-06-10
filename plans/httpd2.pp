@@ -1,4 +1,4 @@
-plan my::httpd2(
+plan bolt_primer::httpd2(
   TargetSpec $nodes,
   Enum['install', 'remove'] $action,
 ) {
