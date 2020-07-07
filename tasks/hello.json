@@ -3,7 +3,8 @@
   "parameters": {
     "message": {
       "description": "A sample message parameter",
-      "type": "String"
+      "type": "String",
+      "default": "Hello Universe"
     }
   }
 }
