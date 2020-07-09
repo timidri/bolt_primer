@@ -3,7 +3,6 @@ plan bolt_primer::aggregate_outputs (
   TargetSpec $output_host,    # host to upload the result file to
   String $task_name='mytask', # the task to run on each host
   Hash $task_parameters={},   # the parameters to pass to the task
-  String $tempfile='/tmp/output.txt',     # local temp file path
   String $uploadfile='/tmp/uploaded.txt', # upload file path
 ) {
 
@@ -11,8 +10,10 @@ plan bolt_primer::aggregate_outputs (
 
   $output = $results.map | $index, $value | {
     "Host: ${value.target.name}\n${value.message}\n======="
-  }
+  }.join("\n")
 
-  file::write($tempfile, $output.join("\n"))
-  upload_file($tempfile, $uploadfile, $output_host)
+  # using a built-in function
+  # write_file($output, $uploadfile, $output_host)
+  # using a task if the built-in function is not supported (older PE versions)
+  run_task('bolt_primer::write_file', $output_host, {path=>$uploadfile, contents=>$output})
 }

@@ -1,0 +1,13 @@
+{
+  "description": "Write a file on the target(s)",
+  "parameters": {
+    "path": {
+      "description": "The file path on the target",
+      "type": "String"
+    },
+    "contents": {
+      "description": "The contents to write to the file",
+      "type": "String"
+    }
+  }
+}
