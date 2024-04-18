@@ -5,6 +5,8 @@ plan bolt_primer::third(
   $message
 ) {
   run_command('hostname', 'all', 'Get all hostnames')
-  $hello = run_task('my::hello', $hello_hosts, 'Say hello', {'message' => $message})
-  run_task('my::goodbye', $goodbye_hosts, 'Say goodbye', {'message' => $message})
+  $hello_results = run_task('bolt_primer::hello', $hello_hosts, 'Say hello', { 'message' => $message })
+  out::message($hello_results[0].value)
+  $goodbye_results = run_task('bolt_primer::goodbye', $goodbye_hosts, 'Say goodbye', { 'message' => $message })
+  out::message($goodbye_results[0].value)
 }

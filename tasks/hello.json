@@ -1,5 +1,5 @@
 {
-  "description": "Simple 'hello world' task",
+  "description": "Simple 'hello world' task in bash",
   "parameters": {
     "message": {
       "description": "A sample message parameter",

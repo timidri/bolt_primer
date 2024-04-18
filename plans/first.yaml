@@ -1,13 +1,13 @@
-  steps:
-    - command: hostname
-      target: all
-      description: "Get all hostnames"
+steps:
+  - command: hostname
+    targets: all
+    description: "Get all hostnames"
 
-    - name: goodbye
-      task: my::goodbye
-      target: all
-      parameters:
-        message: "Hello, World"
-      description: "Say goodbye"
+  - name: goodbye
+    task: bolt_primer::goodbye
+    targets: all
+    parameters:
+      message: "Hello, World"
+    description: "Say goodbye"
 
-  return: $goodbye
+return: $goodbye

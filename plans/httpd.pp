@@ -1,13 +1,13 @@
 plan bolt_primer::httpd(
-  TargetSpec $nodes,
+  TargetSpec $targets,
 ) {
-    apply_prep($nodes)
-    apply($nodes) {
-      package { 'httpd':
-        ensure => installed,
-      }
-      service { 'httpd':
-        ensure => running,
-      }
+  apply_prep($targets)
+  apply($targets) {
+    package { 'httpd':
+      ensure => installed,
     }
+    service { 'httpd':
+      ensure => running,
+    }
+  }
 }

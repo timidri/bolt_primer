@@ -1,26 +1,26 @@
-  parameters:
-    hello_hosts:
-      type: TargetSpec
-      description: "Hosts to greet"
-    goodbye_hosts:
-      type: TargetSpec
-      description: "Hosts to say goodbye to"
-    message:
+parameters:
+  hello_hosts:
+    type: TargetSpec
+    description: "Hosts to greet"
+  goodbye_hosts:
+    type: TargetSpec
+    description: "Hosts to say goodbye to"
+  message:
 
-  steps:
-    - command: hostname
-      target: all
-      description: "Get all hostnames"
+steps:
+  - command: hostname
+    targets: all
+    description: "Get all hostnames"
 
-    - task: my::hello
-      name: hello
-      parameters:
-        message: $message
-      target: $hello_hosts
-      description: "Say hello"
+  - task: bolt_primer::hello
+    name: hello
+    parameters:
+      message: $message
+    targets: $hello_hosts
+    description: "Say hello"
 
-    - task: my::goodbye
-      parameters:
-        message: $message
-      target: $goodbye_hosts
-      description: "Say goodbye"
+  - task: bolt_primer::goodbye
+    parameters:
+      message: $message
+    targets: $goodbye_hosts
+    description: "Say goodbye"
