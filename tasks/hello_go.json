@@ -1,0 +1,20 @@
+{
+  "description": "Simple 'hello world' task in Golang",
+  "parameters": {
+    "message": {
+      "description": "A sample message parameter",
+      "type": "String",
+      "default": "Golang"
+    }
+  },
+  "implementations": [
+    {
+      "name": "hello_go_linux_i386",
+      "requirements": ["linux_i386"]
+    },
+    {
+      "name": "hello_go_windows_i386.exe",
+      "requirements": ["windows_i386"]
+    }
+  ]
+}
