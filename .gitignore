@@ -1,2 +1,9 @@
 modules
+.modules
 .resource_types
+.*_cache.json
+bolt-debug.log
+.rerun.json
+.tool-versions
+inventory.yaml
+bolt-project.yaml
