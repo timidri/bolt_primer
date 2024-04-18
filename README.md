@@ -4,20 +4,31 @@
 
 This repo contains some simple bolt configuration and task and plan examples to help you get up and running quickly. Originally presented at PEX Germany 2019 and published by popular demand :-)
 
+**Updated** on 2024-04-18:
+- fix outdated syntax
+- update docs
+- include a task written in Go.
+
 ## How to use
 
 ### Install and configure 
 
 1. [Install bolt](https://puppet.com/docs/bolt/latest/bolt_installing.html)
 1. Clone this repo
-1. run `bolt puppetfile install`
+1. Run `bolt module install`
 1. Rename `bolt.example.yaml` to `bolt.yaml` and modify accordingly ([docs](https://puppet.com/docs/bolt/latest/configuring_bolt.html))
-1. For ssh or winrm transports: rename `inventory.example.yaml` to `inventory.yaml` and modify accordingly ([docs](https://puppet.com/docs/bolt/latest/inventory_file_v2.html#inventory-file-v2))
-1. For pcp transport: rename `inventory.pcp.yaml` to `inventory.yaml` and modify accordingly ([docs](https://puppet.com/docs/bolt/latest/bolt_configuration_options.html#pcp-transport-configuration-options))
+1. For ssh or winrm transports: rename `inventory.example.yaml` to `inventory.yaml` and modify accordingly ([docs](https://www.puppet.com/docs/bolt/latest/inventory_files))
+1. For pcp transport: rename `inventory.pcp.yaml` to `inventory.yaml` and modify accordingly ([docs](https://www.puppet.com/docs/bolt/latest/bolt_transports_reference#pcp))
 
 ### Usage
 
 #### Commands
+
+1. Run a command on a node not in inventory (ssh transport is the default and ssh access must be configured)
+
+   ```bash
+   bolt command run hostname -t mynode.example.com
+   ```
 
 1. Run a command on all nodes in inventory
 
@@ -64,6 +75,11 @@ This repo contains some simple bolt configuration and task and plan examples to 
    bolt task run bolt_primer::goodbye -t all message="Goodbye, World"
    ```
 
+   ```bash
+   bolt task run bolt_primer::hello_go -t all message="Golang task"
+   ```
+   **Note**: see tasks/hello_go.go for instructions how to compile the go task.
+
 #### Plans
 
 1. Show all available plans
@@ -103,4 +119,4 @@ This repo contains some simple bolt configuration and task and plan examples to 
     ```
 
 
-## Author: dimitri@puppet.com
+## Author: dimitri.tischenko@perforce.com
